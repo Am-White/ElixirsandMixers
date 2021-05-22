@@ -2,25 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+//import { fade } from '@material-ui/core/styles/colorManipulator';
 //import Box from '@material-ui/core/Box';
 //import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
+import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
-
 import SwipeableTemporaryDrawer from './Drawer';
+import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(() => ({
+  AppBar: {
+    backgroundColor: 'rgba(255, 0, 0, 0.6)',
+    top: 50
+  },
   root: {
     position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    bottom: 30,
+    right: 20
   },
+  header: {
+    fontSize: 50,
+    top: 30,
+    color: 'rgba(255, 255, 255, 0.5)'
+  }
+
 }));
 
 function HideOnScroll(props) {
@@ -62,7 +75,7 @@ function ScrollTop(props) {
     const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
 
     if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      anchor.scrollIntoView({ behavior: 'smooth', });
     }
   };
 
@@ -85,19 +98,29 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
+  const classes = useStyles();
   return (
+    
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
-      <AppBar>
-        <Toolbar>
-          <Typography variant="h6">Scroll to see button</Typography>
+
+
+      <AppBar className={classes.AppBar} >
+        <Typography className={classes.header}>Elixirs and Mixers
+
+        <Toolbar className={classes.menuIcon} >
+          <SwipeableTemporaryDrawer/>
         </Toolbar>
-        <SwipeableTemporaryDrawer />
-      </AppBar>
+        
+        </Typography>
+        </AppBar>
+      
+        
       </HideOnScroll>
-      <Toolbar id="back-to-top-anchor" />
-      <ScrollTop {...props}>
+      <Container id="back-to-top-anchor"  style={{height: "0px"}}/>
+
+      <ScrollTop {...props} >
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>

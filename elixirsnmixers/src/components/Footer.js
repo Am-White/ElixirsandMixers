@@ -7,10 +7,17 @@ import { Container, Typography } from "@material-ui/core";
 const useStyles = makeStyles({
   footer: {
     textAlign: "center",
-    margin: 0,
-    top: 50,
+    backgroundColor: "white",
+    height: "150px",
+    paddingTop: 20,
+  },
+  footerContainer: {
+    maxWidth: "100%",
+    padding: 0,
+    height: "300px",
     backgroundColor: "red",
-    position: 'relative',
+    textAlign: "center",
+    position: "absolute"
   }
 });
 
@@ -18,9 +25,14 @@ const Footer = () => {
   const classes = useStyles();
   
   return (
-    <Container className={classes.footer}>
+    <Container className={classes.footerContainer}>
        
-            <Typography>Footer</Typography>
+            <Typography className={classes.footer}>“Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.”
+                    -Lorem Ipsum
+            </Typography>
+
+            Footer
 
     </Container>
   );
