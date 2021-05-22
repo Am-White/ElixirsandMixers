@@ -1,4 +1,4 @@
-import { Card, Paper, Typography } from "@material-ui/core";
+import { Card,} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1976.JPG";
 
