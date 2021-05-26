@@ -1,4 +1,4 @@
-import { CardMedia, Container, Paper, Typography, Box } from "@material-ui/core";
+import { Container, Paper, Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_0017.JPG";
 import ProfileImg from "../images/IMG_0482.JPG";
@@ -42,7 +42,7 @@ const useStyles = makeStyles({
   }
 });
 
-const AboutMe = () => {
+const Inspiration = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -50,8 +50,7 @@ const AboutMe = () => {
         <Paper className={classes.mainP}>
 
           <Container className={classes.Container}>
-            <CardMedia className={classes.profileImg}/>
-              <Box className={classes.mainName} >Kato Sho Sheller</Box>
+              <Box className={classes.mainName} >Inspiration</Box>
           </Container>
 
               <Typography className={classes.Paragraph}>
@@ -70,4 +69,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default Inspiration;

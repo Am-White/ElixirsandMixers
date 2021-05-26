@@ -4,6 +4,9 @@ import Nav from './components/Nav';
 import Main from './pages/main';
 import Home from './pages/home';
 import AboutMe from './pages/aboutMe';
+import Contact from './pages/contact';
+import Recipes from './pages/recipes';
+import Inspiration from './pages/inspiration';
 
 //import PrivateRoute from "./utils/PrivateRoute";
 
@@ -19,6 +22,9 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/aboutme" component={AboutMe} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/recipes" component={Recipes} />
+          <Route exact path="/inspiration" component={Inspiration} />
         </Switch>  
       </div>
       <Footer />

@@ -8,13 +8,14 @@ const useStyles = makeStyles({
   answer: {
     fontSize: "30px",
     margin: "20px",
-    width: "100px",
-    backgroundColor: "primary",
+    width: "200px",
+    backgroundColor: "lightGrey",
   },
   container: {
     marginTop: "300px", 
     marginBottom: "100px",
     backgroundColor: "grey",
+    height: "300px"
   }
 })
 
@@ -27,10 +28,10 @@ const Main = () => {
         <Box className={classes.container} boxShadow={5}>
             <Container  className={classes.question}>
             <Typography style={{fontSize: "50px"}}> Are you over 21?</Typography>
-            <Button variant="outlined" href="/home" className={classes.answer}>
+            <Button variant="contained"  href="/home" className={classes.answer}>
               yes
             </Button>
-            <Button variant="outlined" href="https://blippi.com/" className={classes.answer}>
+            <Button variant="contained" href="https://blippi.com/" className={classes.answer}>
               no
             </Button>
             </Container>

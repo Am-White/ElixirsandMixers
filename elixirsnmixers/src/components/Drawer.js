@@ -65,19 +65,19 @@ export default function SwipeableTemporaryDrawer() {
           </ListItem>
         ))}
         {['Recipes'].map((text) => (
-          <ListItem button component="a" href="/" key={text}>
+          <ListItem button component="a" href="/recipes" key={text}>
             <ListItemIcon><LooksIcon /></ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
         {['Inspiration'].map((text) => (
-          <ListItem button component="a" href="/" key={text}>
+          <ListItem button component="a" href="/inspiration" key={text}>
             <ListItemIcon><FilterVintageIcon /></ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
         {['Contact Me'].map((text) => (
-          <ListItem button component="a" href="/" key={text}>
+          <ListItem button component="a" href="/contact" key={text}>
             <ListItemIcon><LooksIcon /></ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
