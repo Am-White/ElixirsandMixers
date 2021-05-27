@@ -2,7 +2,7 @@ import { CardMedia, CardContent, Card, Paper, Typography, Button, CardActionArea
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1296.JPG";
 import ImageTwo from "../images/IMG_0021.JPG";
-import SpacingGrid from "./recipeCard";
+import SpacingGrid from "../components/recipeCard";
 
 
 
