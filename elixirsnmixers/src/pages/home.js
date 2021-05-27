@@ -2,13 +2,14 @@ import { Card, Typography, Button, Grid, CardMedia, CardActionArea} from "@mater
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1976.JPG";
 import CardImage from "../images/IMG_0482.JPG";
+import SpacingGrid from "./homeCard";
 
 const useStyles = makeStyles({
   root: {
     backgroundImage: `url(${Image})`, 
     backgroundSize: "cover",
     maxWidth: '100%',
-    height: "180vh"
+    height: "auto"
   },
   footer: {
     textAlign: "center",
@@ -30,25 +31,9 @@ const useStyles = makeStyles({
     color: "white",
     marginLeft: 150,
     marginTop: 550,
-    fontSize: "20px"
+    fontSize: "20px",
+    marginBottom: "250px"
   },
-  cardCon: {
-    marginTop: 400,
-    justifyContent: "center"
-  },
-  card: {
-    padding: "20px",
-    marginLeft: "20px",
-    marginRight: "20px",
-    height: "400px",
-    backgroundColor: "rgba(215, 215, 215, 1)",
-    textAlign: "center"
-  },
-  
-  media: {
-    backgroundImage: `url(${CardImage})`,
-    height: 200,
-  }
 });
 
 const Home = () => {
@@ -65,47 +50,8 @@ const Home = () => {
         <br></br> Dictumst quisque sagittis purus sit amet volutpat consequat mauris.”
       </Typography>
 
-      <Grid className={classes.cardCon}  container spacing={3}>
-        <Grid xs={2}>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia className={classes.media} />
-                <Typography>hihihi</Typography>
-                <Typography>...</Typography>
-            </CardActionArea>
-          </Card>
-        </Grid>
+      <SpacingGrid/>
 
-        <Grid xs={2}>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia className={classes.media} />
-                <Typography>hihihi</Typography>
-                <Typography>...</Typography>
-            </CardActionArea>
-          </Card>
-        </Grid>
-
-        <Grid xs={2}>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia className={classes.media} />
-                <Typography>hihihi</Typography>
-                <Typography>...</Typography>
-            </CardActionArea>
-          </Card>
-        </Grid>
-
-        <Grid xs={2}>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia className={classes.media} />
-                <Typography>hihihi</Typography>
-                <Typography>...</Typography>
-            </CardActionArea>
-          </Card>
-        </Grid>
-      </Grid>
     </Card>
 
      <Typography className={classes.footer}>
