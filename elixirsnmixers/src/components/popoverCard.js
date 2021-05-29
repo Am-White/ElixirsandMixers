@@ -19,7 +19,7 @@ import image from '../images/IMG_1296.JPG';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 450,
-    overflowY: "auto"
+    
   },
   media: {
     height: 250,
@@ -35,10 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
-    overflowY: "auto"
-  },
-  avatar: {
-    backgroundColor: red[500],
+    
   },
 }));
 
