@@ -4,7 +4,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { CardMedia, Typography } from '@material-ui/core';
+import { CardMedia, Typography, } from '@material-ui/core';
 import Image from "../images/IMG_1976.JPG"
 
 const useStyles = makeStyles((theme) => ({
@@ -12,23 +12,39 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    height: "auto",
+    height: "350px",
     width: "200px",
     //marginTop: "300px",
     backgroundColor: "lightGrey",
-    marginBottom: "100px"
+    marginBottom: "100px",
+    padding: 5
   },
   control: {
     padding: theme.spacing(2),
   },
-  media: {
+  media1: {
       backgroundImage: `url(${Image})`,
       height: "200px",
-
+      //url: '/recipes'
   },
+  media2: {
+    backgroundImage: `url(${Image})`,
+    height: "200px",
+},
+  media3: {
+    backgroundImage: `url(${Image})`,
+    height: "200px",
+},
+  media4: {
+    backgroundImage: `url(${Image})`,
+    height: "200px",
+},
   title: {
     textAlign: "center",
-    fontSize: "30px"
+  },
+  foot: {
+   textAlign: "center",
+    fontSize: "60px"
   }
 }));
 
@@ -43,18 +59,44 @@ export default function SpacingGrid() {
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
+      {[0,].map((value) => (
         <Grid container justify="center" spacing={spacing}>
-          {[0, 1, 2, 3].map((value) => (
+          
             <Grid key={value} item>
-              <Paper className={classes.paper}>
-                  <CardMedia className={classes.media}/>
+              <Paper className={classes.paper} >
+                  <CardMedia className={classes.media1}/>
 
-                  <Typography className={classes.title}> hihihi </Typography>
-                  <Typography className={classes.title}> ... </Typography>
+                  <Typography className={classes.title} variant="h5" > The Classics </Typography>
+                  <Typography className={classes.foot}> ... </Typography>
               </Paper>
             </Grid>
-          ))}
+            <Grid key={value} item>
+              <Paper className={classes.paper} href="/recipes">
+                  <CardMedia className={classes.media2}/>
+
+                  <Typography className={classes.title} variant="h5"> Sho's Craft Cocktails </Typography>
+                  <Typography className={classes.foot}> ... </Typography>
+              </Paper>
+            </Grid>
+            <Grid key={value} item>
+              <Paper className={classes.paper}>
+                  <CardMedia className={classes.media3}/>
+
+                  <Typography className={classes.title} variant="h5"> Inspiration and Tips </Typography>
+                  <Typography className={classes.foot}> ... </Typography>
+              </Paper>
+            </Grid>
+            <Grid key={value} item>
+              <Paper className={classes.paper}>
+                  <CardMedia className={classes.media4}/>
+
+                  <Typography className={classes.title} variant="h5"> Seattle Bars</Typography>
+                  <Typography className={classes.foot}> ... </Typography>
+              </Paper>
+            </Grid>
+          
         </Grid>
+        ))}
       </Grid>
     </Grid>
   );

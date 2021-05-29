@@ -6,9 +6,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-//import { fade } from '@material-ui/core/styles/colorManipulator';
-//import Box from '@material-ui/core/Box';
-//import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
@@ -21,7 +18,9 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles(() => ({
   AppBar: {
     backgroundColor: 'rgba(255, 0, 0, 0.6)',
-    top: 50
+    height: 70,
+    marginTop: 150,
+    justifyContent: "flex-end"
   },
   root: {
     position: 'fixed',
@@ -31,7 +30,12 @@ const useStyles = makeStyles(() => ({
   header: {
     fontSize: 50,
     top: 30,
-    color: 'rgba(255, 255, 255, 0.5)'
+    color: 'rgba(255, 255, 255, 0.5)',
+    paddingLeft: "20px"
+  },
+  menuIcon: {
+    display: "flex",
+    justifyContent: "flex-end"
   }
 
 }));
@@ -110,7 +114,7 @@ export default function BackToTop(props) {
         <Typography className={classes.header}>Elixirs and Mixers
 
         <Toolbar className={classes.menuIcon} >
-          <SwipeableTemporaryDrawer/>
+          <SwipeableTemporaryDrawer />
         </Toolbar>
         
         </Typography>

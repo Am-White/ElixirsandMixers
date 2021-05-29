@@ -1,4 +1,3 @@
-//IMPORTANT- Get expandable information to be scrollable
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -37,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(180deg)',
     
   },
+  label: {
+    textDecoration: "underline"
+  }
 }));
 
 export default function RecipeReviewCard() {
@@ -77,12 +79,13 @@ export default function RecipeReviewCard() {
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
+          <Typography>Recipe here</Typography>
+          <ExpandMoreIcon/>
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Ingredients:</Typography>
+          <Typography paragraph className={classes.label}>Ingredients:</Typography>
           <Typography paragraph>
              2 oz well gin/Plymouth works great btw
             .75 lemon
@@ -92,7 +95,7 @@ export default function RecipeReviewCard() {
             Up 
             Skewer cherry
           </Typography>
-          <Typography paragraph> Directions:</Typography>
+          <Typography paragraph className={classes.label}> Directions:</Typography>
           <Typography paragraph>
             Add ingredient into a shaker tin. Fill with ice.
             Shake until the outside of the shaker starts to look frosty, usually about 15 shakes.
@@ -100,7 +103,7 @@ export default function RecipeReviewCard() {
             Garnish.
             Serve or enjoy immediate.
           </Typography>
-          <Typography paragraph>Notes from the bartender:</Typography>
+          <Typography paragraph className={classes.label}>Notes from the bartender:</Typography>
           <Typography paragraph>
           . Maraschino is also used to sweeten the drink made from the marasca cherry a recipe from the 1821 which also has a touch of nuttiness 
           from being aged in wooden vats. Always use fresh lemon juice. Juicing the fruit right before making the drink will result in the best possible drink. Fortifying all 

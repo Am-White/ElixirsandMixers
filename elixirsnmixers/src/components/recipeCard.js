@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     height: "auto",
     width: "250px",
-    marginTop: "50px",
     backgroundColor: "lightGrey",
     marginBottom: "100px",
     textAlign: "center",

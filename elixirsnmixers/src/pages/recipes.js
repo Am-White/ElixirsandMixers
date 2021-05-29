@@ -13,6 +13,8 @@ const useStyles = makeStyles({
     backgroundPosition: "0px 32%",
     top: 0,
     height: "600px",
+    marginBottom: "50px",
+    borderBottom: "5px solid darkRed",
   },
   picTwo: {
     backgroundImage: `url(${ImageTwo})`,
@@ -25,19 +27,21 @@ const useStyles = makeStyles({
       color: "black",
       fontSize: "60px",
       textAlign: "center",
-      paddingTop: "25%"
+      display: "fixed",
+      paddingTop: "380px"
       
   },
   classic: {
       color: "white",
       fontSize: "60px",
       textAlign: "center",
-      paddingTop: "18%"
+      display: "fixed",
+      paddingTop: "380px"
      },
-     sRecipes:{
+     specialRecipes:{
          backgroundColor: "white",
          height: "auto",
-         borderTop: "5px solid darkRed",
+         
      }
 });
 
@@ -49,7 +53,7 @@ const AboutMe = () => {
               <Typography className={classes.special}>Specialty Cocktails</Typography>
           </CardMedia>
 
-          <Paper className={classes.sRecipes}>
+          <Paper className={classes.specialRecipes}>
 
               <SpacingGrid/>
                   

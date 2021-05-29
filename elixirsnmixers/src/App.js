@@ -7,6 +7,7 @@ import AboutMe from './pages/aboutMe';
 import Contact from './pages/contact';
 import Recipes from './pages/recipes';
 import Inspiration from './pages/inspiration';
+import Recommendations from './pages/recommendations';
 
 //import PrivateRoute from "./utils/PrivateRoute";
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/inspiration" component={Inspiration} />
+          <Route exact path="/recommendations" component={Recommendations} />
         </Switch>  
       </div>
       <Footer />
