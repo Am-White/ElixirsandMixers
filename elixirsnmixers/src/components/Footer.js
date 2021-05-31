@@ -1,21 +1,20 @@
+//align all items in center and overlap image
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Paper, CardMedia } from "@material-ui/core";
-//import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import { Container, Typography, Card, CardMedia } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import img from "../images/IMG_1976.JPG";
+
 
 const useStyles = makeStyles({
   footerContainer: {
     maxWidth: "100%",
     padding: 0,
     textAlign: "center",
-    //position: "absolute",
-    justifyContent: "center"
   },
   topCon: {
+    //margin: "auto",
     
-    width: "100%",
   },
   topTitle:{
     borderTop: "5px solid darkRed",
@@ -25,14 +24,18 @@ const useStyles = makeStyles({
   bottomCon: {
     backgroundColor: "red",
     maxWidth: "100%",
-    height: "100px",
-  },
+    height: "150px",
+    },
+
   imgIcon: {
     backgroundImage: `url(${img})`,
     borderRadius: "50%",
     height: "150px",
     width: "150px",
-  }
+    alignContent: 'center',
+    //marginBottom: "200px"
+  },
+
 });
 
 const Footer = () => {
@@ -40,17 +43,18 @@ const Footer = () => {
   
   return (
     <Container className={classes.footerContainer}>
+
       <Container className={classes.topCon}>
         <Typography className={classes.topTitle}>Please Drink Well</Typography>
+      <CardMedia className={classes.imgIcon} />
       </Container>
 
-      <CardMedia className={classes.imgIcon}/>
-   
       <Container className={classes.bottomCon} >
-        <Typography>
-        Made with <FavoriteIcon/> 
-        <br></br
-        >©2021</Typography>
+        <Typography className={classes.bottomTitle}>
+          Made with <FavoriteIcon fontSize="small"/> 
+          <br></br>
+          ©2021
+        </Typography>
       </Container>
     </Container>
   );

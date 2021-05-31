@@ -1,7 +1,6 @@
-import { Card, Typography, Button, Grid, CardMedia, CardActionArea} from "@material-ui/core";
+import { Card, Typography, Button, } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1976.JPG";
-import CardImage from "../images/IMG_0482.JPG";
 import SpacingGrid from "../components/homeCard";
 
 const useStyles = makeStyles({

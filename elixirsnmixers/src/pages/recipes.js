@@ -1,4 +1,4 @@
-import { CardMedia, CardContent, Card, Paper, Typography, Button, CardActionArea, CardActions, Grid  } from "@material-ui/core";
+import { CardMedia, Paper, Typography,} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1296.JPG";
 import ImageTwo from "../images/IMG_0021.JPG";
@@ -22,6 +22,8 @@ const useStyles = makeStyles({
     backgroundPosition: " 0px 30%",
     top: 0,
     height: "500px",
+    marginBottom: "50px",
+    borderBottom: "5px solid darkRed",
   },
   special: {
       color: "black",
@@ -39,9 +41,12 @@ const useStyles = makeStyles({
       paddingTop: "380px"
      },
      specialRecipes:{
-         backgroundColor: "white",
+         
          height: "auto",
          
+     },
+     container: {
+       backgroundColor: "white"
      }
 });
 
@@ -63,6 +68,8 @@ const AboutMe = () => {
             <Typography className={classes.classic}>Classic Cocktails</Typography>
           </CardMedia>
           <Paper>
+
+           
 
           </Paper>
       </div>
