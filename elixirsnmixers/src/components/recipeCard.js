@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import { CardMedia, Typography, Button } from '@material-ui/core';
 import Image from "../images/IMG_1976.JPG"
 import AnimatedModal from './popoverbtn';
+//import data from './App/data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,11 +17,12 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     width: "250px",
     backgroundColor: "lightGrey",
-    marginBottom: "100px",
+    //marginBottom: "100px",
     textAlign: "center",
-  },
+    
+   },
   control: {
-    padding: theme.spacing(2),
+    //padding: theme.spacing(2),
   },
   media: {
       backgroundImage: `url(${Image})`,
@@ -37,30 +39,22 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SpacingGrid() {
-  const [spacing, setSpacing] = React.useState(2);
+export default function SpacingGrid(props) {
+  
   const classes = useStyles();
 
-  const handleChange = (event) => {
-    setSpacing(Number(event.target.value));
-  };
+  const {drinkName} = props;
 
   return (
-    <Grid container className={classes.root} spacing={3}>
-      <Grid item xs={12}>
-        <Grid container justify="center" spacing={spacing}>
-          
-            <Grid  item>
+
               <Paper className={classes.paper}>
                   <CardMedia className={classes.media}/>
 
-                  <Typography className={classes.title}> Drink Name </Typography>
-                  <AnimatedModal/>
+                
+                  <Typography className={classes.title} > {drinkName} </Typography>
+                
+                  <AnimatedModal {...props}/>
               </Paper>
-            </Grid>
-          
-        </Grid>
-      </Grid>
-    </Grid>
+            
   );
 }

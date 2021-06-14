@@ -1,8 +1,9 @@
-import { CardMedia, Paper, Typography,} from "@material-ui/core";
+import { CardMedia, Paper, Typography, Grid} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1296.JPG";
 import ImageTwo from "../images/IMG_0021.JPG";
 import SpacingGrid from "../components/recipeCard";
+import data from "../components/App/data";
 
 
 
@@ -42,38 +43,55 @@ const useStyles = makeStyles({
      },
      specialRecipes:{
          
-         height: "auto",
+      //   height: "auto",
          
      },
      container: {
-       backgroundColor: "white"
+       backgroundColor: "white",
+       
+     },
+     card:{
+      display: "flex" 
      }
 });
 
 const AboutMe = () => {
   const classes = useStyles();
   return (
-      <div className={classes.container}>
+    
+    <div className={classes.container}>
           <CardMedia className={classes.picOne}>
               <Typography className={classes.special}>Specialty Cocktails</Typography>
           </CardMedia>
 
+      <Grid container className= {classes.card}>
+       
           <Paper className={classes.specialRecipes}>
+          <Grid item xs={6}>
+          {data.map(recipes => (
 
-              <SpacingGrid/>
-                  
+              <SpacingGrid 
+              
+              key={recipes.drink}
+              drinkName= {recipes.drinkName}
+              description= {recipes.description}
+              ingredients= {recipes.ingredients}
+              directions= {recipes.directions}
+              barNotes={recipes.barNotes}
+              image={recipes.image}/>
+          ))}    
+         </Grid>
           </Paper>
+       
+      </Grid>
 
           <CardMedia className={classes.picTwo}>
             <Typography className={classes.classic}>Classic Cocktails</Typography>
           </CardMedia>
           <Paper>
 
-           
-
           </Paper>
       </div>
-  );
-};
+  )};
 
 export default AboutMe;

@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function AnimatedModal() {
+export default function AnimatedModal(props) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
 
@@ -26,6 +26,7 @@ export default function AnimatedModal() {
     const handleClose = () => {
         setOpen(false);
     };
+
 
     return (
         <div>
@@ -48,7 +49,8 @@ export default function AnimatedModal() {
             >
                 <Fade in={open}>
                     <div >
-                        <RecipeReviewCard/>
+                    
+                        <RecipeReviewCard {...props}/>
                     </div>
                 </Fade>
             </Modal>
