@@ -1,7 +1,7 @@
 //align all items in center and overlap image
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Card, CardMedia } from "@material-ui/core";
+import { Container, Typography,CardMedia } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import img from "../images/IMG_1976.JPG";
 

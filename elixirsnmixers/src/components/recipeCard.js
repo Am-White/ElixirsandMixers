@@ -3,11 +3,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import { CardMedia, Typography, Button } from '@material-ui/core';
+import { CardMedia, Typography, Card } from '@material-ui/core';
 import Image from "../images/IMG_1976.JPG"
 import AnimatedModal from './popoverbtn';
-//import data from './App/data';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,44 +16,34 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     width: "250px",
     backgroundColor: "lightGrey",
-    //marginBottom: "100px",
     textAlign: "center",
-    
    },
-  control: {
-    //padding: theme.spacing(2),
-  },
   media: {
       backgroundImage: `url(${Image})`,
       height: "200px",
-
   },
   title: {
-    
     fontSize: "30px"
   },
-  recipeBtn: {
-      
-      fontSize: "10px"
-  }
+
 }));
 
-export default function SpacingGrid(props) {
+export default function RecipeCard(props) {
   
   const classes = useStyles();
 
   const {drinkName} = props;
 
   return (
-
-              <Paper className={classes.paper}>
+            <Grid item xs className={classes.root} >
+              <Card className={classes.paper}>
                   <CardMedia className={classes.media}/>
 
-                
                   <Typography className={classes.title} > {drinkName} </Typography>
                 
                   <AnimatedModal {...props}/>
-              </Paper>
+              </Card>
+              </Grid>
             
   );
 }

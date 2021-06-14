@@ -1,9 +1,10 @@
-import { CardMedia, Paper, Typography, Grid} from "@material-ui/core";
+import { CardMedia, Typography, Grid,} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1296.JPG";
 import ImageTwo from "../images/IMG_0021.JPG";
-import SpacingGrid from "../components/recipeCard";
-import data from "../components/App/data";
+import RecipeCard from "../components/recipeCard";
+import specialData from "../components/App/specialData";
+import classicData from "../components/App/classicData";
 
 
 
@@ -26,7 +27,15 @@ const useStyles = makeStyles({
     marginBottom: "50px",
     borderBottom: "5px solid darkRed",
   },
-  special: {
+  recipeContainer: {
+    //Center all items
+    marginBottom: 20,
+    marginLeft: 20
+  },
+     container: {
+       backgroundColor: "white",
+     },
+     special: {
       color: "black",
       fontSize: "60px",
       textAlign: "center",
@@ -41,18 +50,6 @@ const useStyles = makeStyles({
       display: "fixed",
       paddingTop: "380px"
      },
-     specialRecipes:{
-         
-      //   height: "auto",
-         
-     },
-     container: {
-       backgroundColor: "white",
-       
-     },
-     card:{
-      display: "flex" 
-     }
 });
 
 const AboutMe = () => {
@@ -64,33 +61,42 @@ const AboutMe = () => {
               <Typography className={classes.special}>Specialty Cocktails</Typography>
           </CardMedia>
 
-      <Grid container className= {classes.card}>
-       
-          <Paper className={classes.specialRecipes}>
-          <Grid item xs={6}>
-          {data.map(recipes => (
-
-              <SpacingGrid 
-              
-              key={recipes.drink}
-              drinkName= {recipes.drinkName}
-              description= {recipes.description}
-              ingredients= {recipes.ingredients}
-              directions= {recipes.directions}
-              barNotes={recipes.barNotes}
-              image={recipes.image}/>
-          ))}    
-         </Grid>
-          </Paper>
+      <Grid container spacing={3} className={classes.recipeContainer}>
+              {specialData.map(recipes => (
+                <RecipeCard 
+  
+                key={recipes.drink}
+                drinkName= {recipes.drinkName}
+                description= {recipes.description}
+                ingredients= {recipes.ingredients}
+                directions= {recipes.directions}
+                barNotes={recipes.barNotes}
+                image={recipes.image}/>
+              ))}    
        
       </Grid>
 
           <CardMedia className={classes.picTwo}>
             <Typography className={classes.classic}>Classic Cocktails</Typography>
           </CardMedia>
-          <Paper>
+          
+          
+       
+       <Grid container spacing={3} className={classes.recipeContainer}>
+             {classicData.map(recipes => (
+               <RecipeCard 
 
-          </Paper>
+               key={recipes.drink}
+               drinkName= {recipes.drinkName}
+               description= {recipes.description}
+               ingredients= {recipes.ingredients}
+               directions= {recipes.directions}
+               barNotes={recipes.barNotes}
+               image={recipes.image}/>
+             ))}        
+       </Grid>
+      
+     
       </div>
   )};
 
