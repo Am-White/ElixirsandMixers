@@ -4,7 +4,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { CardMedia, Typography, Card } from '@material-ui/core';
-import Image from "../images/IMG_1976.JPG"
 import AnimatedModal from './popoverbtn';
 
 
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
    },
   media: {
-      backgroundImage: `url(${Image})`,
+     // backgroundImage: `url(${image})`,
       height: "200px",
   },
   title: {
@@ -32,12 +31,12 @@ export default function RecipeCard(props) {
   
   const classes = useStyles();
 
-  const {drinkName} = props;
+  const {drinkName, image} = props;
 
   return (
             <Grid item xs className={classes.root} >
               <Card className={classes.paper}>
-                  <CardMedia className={classes.media}/>
+                  <CardMedia className={classes.media} image={image}> </CardMedia>
 
                   <Typography className={classes.title} > {drinkName} </Typography>
                 

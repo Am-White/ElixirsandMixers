@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 250,
     
-    backgroundImage: `url(${image})`
+    //backgroundImage: `url(${image})`
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -50,13 +50,13 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
-  const {drinkName, description, directions, ingredients, barNotes} = props;
+  const {drinkName, description, directions, ingredients, barNotes, image } = props;
 
   return (
     <Card className={classes.root}>
       <CardHeader title={drinkName}> </CardHeader>
       <CardMedia
-        className={classes.media} />
+        className={classes.media} image={image}> </CardMedia>
 
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
