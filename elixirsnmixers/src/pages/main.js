@@ -1,6 +1,9 @@
 import { Container, Box, Typography, Button, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
+  main: {
+    height: "725px"
+  },
   question: {
     padding: "20px",
     textAlign: "center",
@@ -15,15 +18,16 @@ const useStyles = makeStyles({
     marginTop: "300px", 
     marginBottom: "100px",
     backgroundColor: "grey",
-    height: "300px"
+    maxHeight: "300px"
   }
 })
+
 
 const Main = () => {
 
   const classes= useStyles();
   return (
-    <Container >
+    <Container className={classes.main}>
         <br/>
         <Box className={classes.container} boxShadow={5}>
             <Container  className={classes.question}>

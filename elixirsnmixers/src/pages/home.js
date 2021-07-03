@@ -1,7 +1,7 @@
 import { Card, Typography, Button, } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Image from "../images/IMG_1976.JPG";
-import SpacingGrid from "../components/homeCard";
+import HomeCard from "../components/homeCard";
 
 const useStyles = makeStyles({
   root: {
@@ -49,7 +49,7 @@ const Home = () => {
         <br></br> Dictumst quisque sagittis purus sit amet volutpat consequat mauris.”
       </Typography>
 
-      <SpacingGrid/>
+      <HomeCard/>
 
     </Card>
 

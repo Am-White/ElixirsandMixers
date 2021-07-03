@@ -78,7 +78,7 @@ export default function RecipeReviewCard(props) {
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <Typography>Recipe here</Typography>
+          <Typography></Typography>
           <ExpandMoreIcon/>
         </IconButton>
       </CardActions>

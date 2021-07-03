@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() => ({
   AppBar: {
-    backgroundColor: 'rgba(255, 0, 0, 0.6)',
+    backgroundColor: 'darkRed',
     height: 70,
     marginTop: 150,
     justifyContent: "flex-end"
@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
   header: {
     fontSize: 50,
     top: 30,
-    color: 'rgba(255, 255, 255, 0.5)',
+    color: 'grey',
     paddingLeft: "20px"
   },
   menuIcon: {
@@ -74,6 +74,7 @@ function ScrollTop(props) {
     threshold: 100,
   });
 
+
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
 
@@ -101,8 +102,10 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
+  
   const classes = useStyles();
   return (
+
     
     <React.Fragment>
       <CssBaseline />
@@ -118,6 +121,7 @@ export default function BackToTop(props) {
         
         </Typography>
         </AppBar>
+
       
         
       </HideOnScroll>

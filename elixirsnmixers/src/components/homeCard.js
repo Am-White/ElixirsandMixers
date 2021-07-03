@@ -4,8 +4,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { CardMedia, Typography, } from '@material-ui/core';
-import Image from "../images/IMG_1976.JPG"
+import { CardMedia, Typography, Button, Card, CardActions} from '@material-ui/core';
+import Lemon from "../images/lemon.png";
+import Martini from "../images/martini.png";
+import Shaker from "../images/shaker.png";
+import Map from "../images/map.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     height: "350px",
     width: "200px",
-    //marginTop: "300px",
+    textAlign: "center",
     backgroundColor: "lightGrey",
     marginBottom: "100px",
     padding: 5
@@ -23,38 +26,46 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   media1: {
-      backgroundImage: `url(${Image})`,
-      height: "200px",
-      //url: '/recipes'
+      backgroundImage: `url(${Martini})`,
+      width: "100px",
+      height: "100px",
+      margin: "25%"
   },
   media2: {
-    backgroundImage: `url(${Image})`,
-    height: "200px",
+    backgroundImage: `url(${Lemon})`,
+    width: "100px",
+    height: "100px",
+    margin: "25%"
 },
   media3: {
-    backgroundImage: `url(${Image})`,
-    height: "200px",
+    backgroundImage: `url(${Shaker})`,
+    width: "100px",
+    height: "100px",
+    margin: "25%"
 },
   media4: {
-    backgroundImage: `url(${Image})`,
-    height: "200px",
+    backgroundImage: `url(${Map})`,
+    width: "100px",
+    height: "100px",
+    margin: "25%"
 },
   title: {
     textAlign: "center",
+    fontSize: "auto",
   },
   foot: {
-   textAlign: "center",
-    fontSize: "60px"
+   justifyContent: "center",
+  },
+  footText: {
+    fontSize: "50px",
+    height: "inline",
+    width: "70%"
   }
 }));
 
-export default function SpacingGrid() {
-  const [spacing, setSpacing] = React.useState(2);
+export default function HomeCard() {
+  const [spacing ] = React.useState(2);
   const classes = useStyles();
-
-  const handleChange = (event) => {
-    setSpacing(Number(event.target.value));
-  };
 
   return (
     <Grid container className={classes.root} spacing={2}>
@@ -63,36 +74,47 @@ export default function SpacingGrid() {
         <Grid container justify="center" spacing={spacing}>
           
             <Grid key={value} item>
-              <Paper className={classes.paper} >
+              <Card className={classes.paper}>
                   <CardMedia className={classes.media1}/>
+                  <Typography className={classes.title} > The Classics </Typography>
 
-                  <Typography className={classes.title} variant="h5" > The Classics </Typography>
-                  <Typography className={classes.foot}> ... </Typography>
-              </Paper>
+                  <CardActions className={classes.foot}>
+                    <Button className={classes.footText} href="/recipes"> ... </Button>
+                  </CardActions>
+              </Card>
             </Grid>
             <Grid key={value} item>
-              <Paper className={classes.paper} href="/recipes">
+              <Card className={classes.paper}>
                   <CardMedia className={classes.media2}/>
 
-                  <Typography className={classes.title} variant="h5"> Sho's Craft Cocktails </Typography>
-                  <Typography className={classes.foot}> ... </Typography>
-              </Paper>
+                  <Typography className={classes.title} > Sho's Craft Cocktails </Typography>
+                  
+                  <CardActions className={classes.foot}>
+                    <Button className={classes.footText} href="/recipes"> ... </Button>
+                  </CardActions>
+              </Card>
             </Grid>
             <Grid key={value} item>
-              <Paper className={classes.paper}>
+              <Card className={classes.paper}>
                   <CardMedia className={classes.media3}/>
 
-                  <Typography className={classes.title} variant="h5"> Inspiration and Tips </Typography>
-                  <Typography className={classes.foot}> ... </Typography>
-              </Paper>
+                  <Typography className={classes.title} > Inspiration and Tips </Typography>
+                  
+                  <CardActions className={classes.foot}>
+                    <Button className={classes.footText} href="/inspiration"> ... </Button>
+                  </CardActions>
+              </Card>
             </Grid>
             <Grid key={value} item>
-              <Paper className={classes.paper}>
+              <Card className={classes.paper}>
                   <CardMedia className={classes.media4}/>
 
-                  <Typography className={classes.title} variant="h5"> Seattle Bars</Typography>
-                  <Typography className={classes.foot}> ... </Typography>
-              </Paper>
+                  <Typography className={classes.title} > Seattle Bars</Typography>
+                  
+                  <CardActions className={classes.foot}>
+                    <Button className={classes.footText}> ... </Button>
+                  </CardActions>
+              </Card>
             </Grid>
           
         </Grid>

@@ -12,7 +12,6 @@ import Recommendations from './pages/recommendations';
 
 //import PrivateRoute from "./utils/PrivateRoute";
 
-
 function App() {
 
   return (
@@ -21,7 +20,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" component={Main}/>
           <Route exact path="/home" component={Home} />
           <Route exact path="/aboutme" component={AboutMe} />
           <Route exact path="/contact" component={Contact} />
