@@ -12,19 +12,20 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import image from '../images/IMG_1296.JPG';
+//import Popover from '@material-ui/core/Popover';
 
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 450,
-    
   },
+  // titleTop: {
+  //   fontSize: "30px",
+  //   fontFamily: "Optima, sans-serif"
+  // },
   media: {
     height: 250,
-    
-    //backgroundImage: `url(${image})`
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -35,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
-    
   },
   label: {
     textDecoration: "underline"
@@ -50,11 +50,12 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
+
   const {drinkName, description, directions, ingredients, barNotes, image } = props;
 
   return (
     <Card className={classes.root}>
-      <CardHeader title={drinkName}> </CardHeader>
+      <CardHeader className={classes.titleTop}  title={drinkName}> </CardHeader>
       <CardMedia
         className={classes.media} image={image}> </CardMedia>
 
@@ -63,8 +64,11 @@ export default function RecipeReviewCard(props) {
         {description}
         </Typography>
       </CardContent>
+
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" title="favorite">
+        
+        <IconButton  aria-label="add to favorites" title="favorite"
+        /* Add banners to pop up when clicked "coming soon"*/>
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
@@ -82,6 +86,7 @@ export default function RecipeReviewCard(props) {
           <ExpandMoreIcon/>
         </IconButton>
       </CardActions>
+
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph className={classes.label}>Ingredients:</Typography>

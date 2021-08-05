@@ -79,7 +79,7 @@ export default function HomeCard() {
                   <Typography className={classes.title} > The Classics </Typography>
 
                   <CardActions className={classes.foot}>
-                    <Button className={classes.footText} href="/recipes"> ... </Button>
+                    <Button className={classes.footText} href="/recipes#anchor"> ...</Button>
                   </CardActions>
               </Card>
             </Grid>

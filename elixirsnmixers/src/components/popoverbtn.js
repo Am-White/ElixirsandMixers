@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflowY: "auto"
+        overflowY: "auto",
     },
 }));
 
@@ -31,7 +31,7 @@ export default function AnimatedModal(props) {
     return (
         <div>
 
-            <Button variant="contained" color="secondary" onClick={handleOpen}>
+            <Button variant="contained" color="secondary" onClick={handleOpen} >
                 Open Recipe
             </Button>
 

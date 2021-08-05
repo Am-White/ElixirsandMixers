@@ -30,7 +30,8 @@ const useStyles = makeStyles(() => ({
     fontSize: 50,
     top: 30,
     color: 'grey',
-    paddingLeft: "20px"
+    paddingLeft: "20px",
+    fontFamily: "Optima, sans-serif"
   },
   menuIcon: {
     display: "flex",

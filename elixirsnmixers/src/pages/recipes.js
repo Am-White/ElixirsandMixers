@@ -9,7 +9,7 @@ import classicData from "../components/App/classicData";
 
 
 const useStyles = makeStyles({
-  picOne: {
+  craftImg: {
     backgroundImage: `url(${Image})`,
     backgroundSize: "cover",
     backgroundPosition: "0px 32%",
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     marginBottom: "50px",
     borderBottom: "5px solid darkRed",
   },
-  picTwo: {
+  classicImg: {
     backgroundImage: `url(${ImageTwo})`,
     backgroundSize: "cover",
     backgroundPosition: " 0px 30%",
@@ -28,9 +28,9 @@ const useStyles = makeStyles({
     borderBottom: "5px solid darkRed",
   },
   recipeContainer: {
-    //Center all items
     marginBottom: 20,
-    marginLeft: 20
+    margin: 0,
+    //ALIGN CARDS HERE 
   },
      container: {
        backgroundColor: "white",
@@ -40,7 +40,8 @@ const useStyles = makeStyles({
       fontSize: "60px",
       textAlign: "center",
       display: "fixed",
-      paddingTop: "380px"
+      paddingTop: "380px",
+      fontFamily: "Optima, sans-serif"
       
   },
   classic: {
@@ -48,7 +49,8 @@ const useStyles = makeStyles({
       fontSize: "60px",
       textAlign: "center",
       display: "fixed",
-      paddingTop: "380px"
+      paddingTop: "380px",
+      fontFamily: "Optima, sans-serif"
      },
 });
 
@@ -57,7 +59,7 @@ const AboutMe = () => {
   return (
     
     <div className={classes.container}>
-          <CardMedia className={classes.picOne}>
+          <CardMedia className={classes.craftImg}>
               <Typography className={classes.special}>Specialty Cocktails</Typography>
           </CardMedia>
 
@@ -76,13 +78,13 @@ const AboutMe = () => {
        
       </Grid>
 
-          <CardMedia className={classes.picTwo}>
+          <CardMedia className={classes.classicImg}>
             <Typography className={classes.classic}>Classic Cocktails</Typography>
           </CardMedia>
           
           
        
-       <Grid container spacing={3} className={classes.recipeContainer}>
+       <Grid container spacing={3} className={classes.recipeContainer} id="anchor">
              {classicData.map(recipes => (
                <RecipeCard 
 

@@ -2,7 +2,7 @@
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography,CardMedia } from "@material-ui/core";
-import img from "../images/IMG_1976.JPG";
+import img from "../images/martini.png";
 
 
 const useStyles = makeStyles({
@@ -11,32 +11,32 @@ const useStyles = makeStyles({
     padding: 0,
     margin: 0,
     textAlign: "center",
-  },
-
-  topCon: {
-    maxWidth: "35%",
+    position: "relative"
   },
 
   topTitle:{
     borderTop: "5px solid darkRed",
-    fontSize: "50px",
-    paddingTop: "15px"
+    fontSize: "30px",
+    paddingTop: "15px",
+    fontFamily: "Optima, sans-serif",
+    textAlign: "center"
+    
   },
 
   bottomCon: {
     backgroundColor: "darkRed",
     maxWidth: "100%",
-    maxHeight: "150px",
-    //marginTop: "25px",
+    height: "150px",
     display:'flex', 
     justifyContent:'center'
     },
 
   imgIcon: {
     backgroundImage: `url(${img})`,
-    borderRadius: "50%",
-    height: "150px",
-    width: "150px"
+    height: "70px",
+    width: "70px",
+    position: "absolute",
+    top: "65px"
   },
 
 });
@@ -46,15 +46,13 @@ const Footer = () => {
   
   return (
     <Container className={classes.footerContainer}>
-
-      <Container className={classes.topCon}>
-        <Typography className={classes.topTitle}>Please Drink Well</Typography>
-
-
-      </Container>
-
       <Container className={classes.bottomCon} >
-        <CardMedia className={classes.imgIcon} />
+
+        <Container>
+        <Typography className={classes.topTitle}>Please Drink Well</Typography>
+        </Container>
+      
+          <CardMedia className={classes.imgIcon} />
 
         {/* <Typography className={classes.bottomTitle}>
           Made with <FavoriteIcon fontSize="small"/> 

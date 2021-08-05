@@ -10,19 +10,23 @@ import AnimatedModal from './popoverbtn';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    justifyItems: "end"
   },
   paper: {
     height: "auto",
-    width: "250px",
+    maxWidth: "400px",
     backgroundColor: "lightGrey",
     textAlign: "center",
+    paddingBottom: "10px",
+    
    },
   media: {
      // backgroundImage: `url(${image})`,
       height: "200px",
   },
   title: {
-    fontSize: "30px"
+    fontSize: "30px",
+    fontFamily: "Optima, sans-serif"
   },
 
 }));
